@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html lang="en" dir="ltr">
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" text="text/css" href="{% static 'images/style.css' %}">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+<div class="container ml-2">
+
+  <head>
+
+    <title>{{ title }}</title>
+
+  </head>
+</div>
+
+<div class="container ml-6">
+
+  <body class="bd"><br><br><br><br><br><br><br>
+  <!--  <h1>{{ title }}</h1><br><br> -->
+
+    <h2>How many times do you and {{second_person.0}} see each other in a year? {{ days_hours }} </h2><br><br>
+
+    <form action="/days_hours/" method="POST">
+      {% csrf_token %}
+
+      <input type="hidden" name="firstname1" value="{{first_person.0}}">
+      <input type="hidden" name="gender1" value="{{first_person.1}}">
+      <input type="hidden" name="age1" value="{{first_person.2}}">
+      <input type="hidden" name="country1" value="{{first_person.3}}">
+
+      <input type="hidden" name="firstname2" value="{{second_person.0}}">
+      <input type="hidden" name="gender2" value="{{second_person.1}}">
+      <input type="hidden" name="age2" value="{{second_person.2}}">
+      <input type="hidden" name="country2" value="{{second_person.3}}">
+
+      <input type="hidden" name="relation" value="{{relation.0}}">
+
+      In a week?<br>
+      <input type="number" name="week" min="1" max="7"><br><br>
+      In a month?<br>
+      <input type="number" name="days" min="1" max="30"><br><br>
+      In a year?<br>
+      <input type="number" name="year" min="1" max="60"><br><br>
+
+      <h2>Each time you see {{second_person.0}}, how many hours do you spend together?</h2><br><br>
+
+      <input type="number" name="hours" min="1" max="24"><br><br>
+
+      <input type="submit" value="Next">
+
+
+    </form>
+
+  </body>
+
+</div>
+
+</html>
