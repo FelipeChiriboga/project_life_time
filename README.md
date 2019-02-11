@@ -7,7 +7,9 @@ The reason why I became interested in this project was to think about the time I
 For this reason I wanted to use data science to discover how much time I have left to enjoy with them, what I never thought was that once I did the relevant calculations I would be surprised to see how little time I could have to enjoy with them. 
 
 For this project I used the life expectancy database of the UN.
+
 Python and different libraries (Scikit-Learn, Pandas, Numpy)
+
 Django Framework
 
 
